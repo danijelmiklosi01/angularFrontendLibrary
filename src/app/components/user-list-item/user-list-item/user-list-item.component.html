@@ -1,0 +1,3 @@
+<div class="user-card" (click)="GotoDetails()">
+    {{user.firstName + ' ' + user.lastName}} <span [ngClass]="{'active': user.active, 'inactive': !user.active }">{{user.active ? 'Active' : 'Inactive'}}</span>
+  </div>

@@ -1,0 +1,19 @@
+
+<div class="users" *ngIf="!editUser">
+<user-overview></user-overview>
+
+<div style="height:2rem"></div>
+
+<user-list></user-list>
+</div>
+<div class="add-new-user" *ngIf="editUser">
+    
+    <label>First Name: <input type="text" [(ngModel)]="user.firstName"/></label>
+    <label>Last Name: <input type="text" [(ngModel)]="user.lastName"/></label>
+    <label>Avatar URL: <input type="text" [(ngModel)]="user.avatarURL"/></label>  
+    </div>
+
+<button type="button" class="btn btn-primary" (click)="edit()" *ngIf="!editUser">Add</button>
+<button type="button" class="btn btn-primary" (click)="add()" *ngIf="editUser">Save</button>
+
+

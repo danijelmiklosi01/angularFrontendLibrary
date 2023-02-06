@@ -1,0 +1,8 @@
+<div class="box">
+    
+    <div *ngIf="dataService.books == null"><b>Books loading...</b></div>
+</div>
+
+<div class="book-card" (click)="GotoDetails()">
+    {{book.author + ' - ' + book.title}} 
+</div>

@@ -1,0 +1,4 @@
+<div class="book-list-box">
+    <div *ngIf="dataService.books == null"><b>Books loading...</b></div>
+    <book-list-item *ngFor="let book of dataService.books" [book]="book"></book-list-item>
+  </div>

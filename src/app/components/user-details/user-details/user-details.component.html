@@ -1,0 +1,42 @@
+<div *ngIf="user != null" class="user-holder">
+<h2>User Details</h2>
+
+
+  <div class="text-holder" *ngIf="!editUser">
+    <div>First Name: {{user.firstName}}</div>
+    <div>Last Name: {{user.lastName}}</div>
+    <div>Created Date: {{user.createdDate}}</div>
+    <div>Avatar URL: {{user.avatarURL}}</div>
+    <div>Active: {{user.active}}</div>
+    <div class="rentedBooks" >Rented Books: 
+      <div *ngFor="let book of user.rentedBooks">{{dataService.bookCopyToBook(book.bookID).title + ' ' + dataService.bookCopyToBook(book.bookID).author}} <div class="rentedBooksButton"><button class="btn btn-primary" (click)="onReturnBook(book.id)">Return</button></div></div>
+      
+    </div>
+  </div>
+  <div class="text-edit-holder" *ngIf="editUser">
+    <input type="text" [(ngModel)]="user.firstName"/>
+    <input type="text" [(ngModel)]="user.lastName"/>
+    <input type="text" [(ngModel)]="user.createdDate"/>
+    <input type="text" [(ngModel)]="user.avatarURL"/>
+    <label>Is Active:<input type="checkbox"  [(ngModel)]="user.active"/></label>
+    </div>
+
+    
+
+<button class="btn btn-primary" (click)="edit()" *ngIf="!editUser">Edit User</button>
+
+<div class="btnSaveDelete">
+<button class="btn btn-primary" (click)="save()" *ngIf="editUser">Save</button>
+<button class="btn btn-danger" (click)="delete()" *ngIf="editUser">Delete</button>
+</div>
+<button class="btn btn-primary" (click)="availableBooks();AvailableBooks()" *ngIf="!btnAvailable">Add book</button>
+<ng-container *ngIf="btnAvailable">
+  <div *ngFor="let book of bookCopies" class="book-card" (click)="rent(book.bookID)">
+    <ng-container *ngIf="canRent(book)">
+      {{dataService.bookCopyToBook(book.bookID).title}}
+    </ng-container>
+  </div>
+</ng-container>
+
+</div>
+

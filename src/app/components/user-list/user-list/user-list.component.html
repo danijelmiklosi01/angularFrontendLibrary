@@ -1,0 +1,4 @@
+<div class="user-list-box">
+    <div *ngIf="dataService.users == null"><b>Users loading...</b></div>
+    <users-list-item *ngFor="let user of dataService.users" [user]="user"></users-list-item>
+  </div>

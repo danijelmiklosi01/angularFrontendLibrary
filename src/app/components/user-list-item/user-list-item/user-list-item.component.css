@@ -1,0 +1,36 @@
+.user-card
+{
+    cursor:pointer;
+    margin: auto;
+    text-align: center;
+    background-color:rgba(77,181,255,0.4);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding:1rem 1rem;
+    margin-bottom:0.50rem;
+    
+    border-radius: 1rem;
+    border: 3px #bbb;
+    
+    
+}
+
+.user-card:hover{
+    background-color:#4db5ff;
+}
+
+.user-card-disabled{
+    opacity:1;
+    filter:blur(1.5px);
+}
+
+.active {
+    color: green;
+}
+  
+  .inactive {
+    color: red;
+}
+
+span {
+    margin-left: 5px;
+  }

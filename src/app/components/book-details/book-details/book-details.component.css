@@ -1,0 +1,27 @@
+.book-holder {
+    display:flex;
+    flex-direction: column;
+    margin-left: 0.2rem;
+}
+.btn {
+    margin-top: 2rem;
+}
+h2 {
+    margin-bottom: 2rem;
+}
+.text-edit-holder {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.2rem;
+}
+.text-edit-holder input {
+    margin-bottom: 1rem;
+    background-color: #4db5ff;
+    width: 300px;
+}
+.btnSaveDelete {
+    display: flex;
+}
+.btnSaveDelete button {
+    margin: 1rem;
+}

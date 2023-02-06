@@ -1,0 +1,28 @@
+<div *ngIf="book != null" class="book-holder">
+    <h2>Book Details</h2>
+    
+    
+      <div class="book-holder" *ngIf="!editBook">
+        <div>Title: {{book.title}}</div>
+        <div>Author: {{book.author}}</div>
+        <div>Year Published: {{book.yearPublished}}</div>
+        <div>Publisher: {{book.publisher}}</div>
+        <div>Number of Copies: {{book.numberOfCopies}}</div>
+      </div>
+      <div class="text-edit-holder" *ngIf="editBook">
+        <input type="text" [(ngModel)]="book.title"/>
+        <input type="text" [(ngModel)]="book.author"/>
+        <input type="text" [(ngModel)]="book.yearPublished"/>
+        <input type="text" [(ngModel)]="book.publisher"/>
+        
+        </div>
+      
+    
+    <button class="btn btn-primary" (click)="edit()" *ngIf="!editBook">Edit Book</button>
+    <div class="btnSaveDelete">
+    <button class="btn btn-primary" (click)="save()" *ngIf="editBook">Save</button>
+    <button class="btn btn-danger" (click)="delete()" *ngIf="editBook">Delete</button>
+    </div>
+    </div>
+    
+    

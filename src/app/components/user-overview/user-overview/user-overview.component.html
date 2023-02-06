@@ -1,0 +1,4 @@
+<div class="box">
+    <div *ngIf="dataService.users != null"><p>Total Users: {{userCount}}</p></div>
+    <div *ngIf="dataService.users == null"><b>Users loading...</b></div>
+  </div>
